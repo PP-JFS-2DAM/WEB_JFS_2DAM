@@ -3,7 +3,7 @@
 $connection = "";
 include "../connection/connection.php";
 
-function renderForm($id, $name, $surname, $error)
+function renderForm($id, $name, $surname,$dni, $error)
 {
     ?>
 <!DOCTYPE html>
@@ -29,13 +29,17 @@ if ($error != '') {
         <strong><label class="labelID" >ID: <?php echo $id; ?></strong>
     </div>
         <div class="field">
-            <label class="label" >Name:</label>
+            <label class="label" >Name</label>
                 <input class="inp" type="text" name="name" value="<?php echo $name; ?>"
         </div>
             <div class="field">
-                <label class="label" >Surname:</label>
+                <label class="label" >Surname</label>
                 <input class="inp" type="text" name="surname" value="<?php echo $surname; ?>"
             </div>
+    <div class="field">
+        <label class="label" >DNI</label>
+        <input class="inp" type="text" name="dni" value="<?php echo $dni; ?>"
+    </div>
         <input class = "btn-log-reg" type="submit" name="submit" value="Update">
     </div>
 </form>
@@ -52,7 +56,8 @@ if (isset($_POST['submit'])) {
         $id = $_POST['id'];
         $name = htmlspecialchars($_POST['name']);
         $surname = htmlspecialchars($_POST['surname']);
-        $query = "UPDATE user SET name = '$name', surname = '$surname' WHERE id = '$id'";
+        $dni = htmlspecialchars($_POST['dni']);
+        $query = "UPDATE user SET name = '$name', surname = '$surname', dni = '$dni' WHERE id = '$id'";
         mysqli_query($connection, $query) or die(mysqli_error());
 
         header("Location: Read.php");
@@ -70,8 +75,9 @@ if (isset($_POST['submit'])) {
 
             $name = $row['name'];
             $surname = $row['surname'];
+            $dni = $row['dni'];
 
-            renderForm($id, $name, $surname, '');
+            renderForm($id, $name, $surname, $dni, '');
         } else {
             echo "No hay resultados";
         }
