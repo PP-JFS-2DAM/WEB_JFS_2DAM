@@ -1,0 +1,33 @@
+*{
+    margin: auto;
+}
+
+body {
+    background-color: cadetblue;
+
+}
+
+.title{
+    margin:50px 0 20px 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 26px;
+    font-family: sans-serif;
+}
+
+.table{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+     align-content: center;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    width: 50%;
+}
+
+.field {
+    padding: 10px;
+    text-align: center;
+
+}
