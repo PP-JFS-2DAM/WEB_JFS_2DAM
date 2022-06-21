@@ -8,7 +8,7 @@
 <body>
 
 <div class = "title">CLIENTS LIST</div>
-<div class = "table">
+<div class = "column_name">
     <div class="field">
         <h4>User_id</h4>
     </div>
@@ -24,7 +24,7 @@
     <div class="field">
         <h4>VIP</h4>
     </div>
-    <div class="field" style="background-color:#fff";>
+    <div class="field" style="background-color:#ccc";>
         <h4>Functions</h4>
     </div>
 </div>
@@ -32,15 +32,20 @@
 $connection = "";
 include "../connection/connection.php";
 
+$isVIP="";
 $result = mysqli_query($connection,"SELECT * FROM user")
 or die(mysqli_error());
 
+while($field = mysqli_fetch_array( $result )) {
 
-while($field = mysqli_fetch_array( $result ))
-{
+    if($field['vip_user'] == 0){
+        $isVIP = $field['name']." is not VIP";
+    } else{
+        $isVIP = $field['name']." is VIP";
+    }
 
 
-    echo '<div class = "table">
+    echo '<div class = "registers">
                 <div class="field">       
                 <p>'. $field['id'] .'</p>
                 </div>
@@ -54,7 +59,7 @@ while($field = mysqli_fetch_array( $result ))
                 <p>'. $field['dni'] .'</p>
                  </div>
                   <div class="field">
-                <p>'. $field['vip_user'] .'</p>
+                <p>'.$isVIP.'</p>
                  </div>
                   <div class="crud">
                 <a href="Create.php"><img class="icon" src="../icons/add.png" alt="Register"></a>
@@ -62,19 +67,7 @@ while($field = mysqli_fetch_array( $result ))
                 <a href="Delete.php?id=' . $field['id'] . '"><img class="icon" src="../icons/delete.png" alt="Delete"></a>
                  </div>
             </div>';
-
-    echo '<td></td>';
-    echo '<td></td>';
-    echo "</tr>";
-
-
-
 }
-// terminamos la tabla
-echo "</table>";
-/* En la parte final de la página, mostramos un link para
-añadir un nuevo registro*/
 ?>
-<p></p>
 </body>
 </html>

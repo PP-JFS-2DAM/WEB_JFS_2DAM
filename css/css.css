@@ -21,14 +21,30 @@ a {
     font-family: sans-serif;
 }
 
-.table{
+.column_name{
     display: flex;
     flex-direction: row;
-    background-color: #aaa;
+    background-color: #ccc;
     border: 1px solid #000;
     width: 75%;
 }
 
+.registers{
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border: 1px solid #000;
+    width: 75%;
+}
+
+.crud {
+    background-color: #ccc;
+    padding: 10px 5px 10px 5px;
+border-left: solid 1px #000;
+    text-align: center;
+    width: 100%;
+
+}
 
 .field {
     padding: 10px 5px 10px 5px;
@@ -38,14 +54,9 @@ a {
 
 }
 
-.crud {
-    background-color: #fff;
-    padding: 10px 5px 10px 5px;
-    //border-right: solid 1px #000;
-    text-align: center;
-    width: 100%;
 
-}
+
+
 
 .icon{
     width: 25px;

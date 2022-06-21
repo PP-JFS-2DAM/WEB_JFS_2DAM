@@ -48,7 +48,9 @@ h1{
     background-color: #eee;
 }
 
-
+.check{
+    margin: 30px;
+}
 
 .label{
     text-align: center;
@@ -67,9 +69,5 @@ h1{
     padding: 5px;
     border-radius: 5px;
     background-color: #eee;
-}
-
-#esVIP{
-    margin: 30px 5px 30px 5px;
 }
 
