@@ -28,7 +28,7 @@
 $connection = "";
 include "connection/connection.php";
 
-$result= mysqli_query($connection,"SELECT * FROM orders") or die(mysqli_error());
+$result= mysqli_query($connection,"SELECT * FROM work_order") or die(mysqli_error());
 
 while($field = mysqli_fetch_array( $result ))
 {
