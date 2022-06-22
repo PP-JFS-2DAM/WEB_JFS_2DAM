@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div class = "title">CLIENTS LIST</div>
+<div class = "title">CLIENT LIST</div>
 <div class = "column_name">
     <div class="field">
         <h4>User_id</h4>

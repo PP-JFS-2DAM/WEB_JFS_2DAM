@@ -2,20 +2,12 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/css.css">
+    <title>Computer List</title>
 </head>
 <body>
 
-<?php
-set_include_path('C:\Users\Joserra\Desktop\MisCursos\DAM\SemanaPracticas2\WEB_JFS_2DAM\localhost\OrderList.php');
-$conection = "";
-$name="";
-
-include "connection/connection.php";
-$query="select * from computer";
-$result= mysqli_query($conection,$query);
-?>
-<div class = "title">LISTA DE ORDENADORES</div>
-<div class = "table">
+<div class = "title">COMPUTER LIST</div>
+<div class = "column_name">
     <div class="field">
         <h4>Computer_id</h4>
     </div>
@@ -31,44 +23,32 @@ $result= mysqli_query($conection,$query);
     <div class="field">
         <h4>RAM</h4>
     </div>
-    <div class="field">
-        <h4>Repaired</h4>
-    </div>
 </div>
+
 <?php
+$connection = "";
+include "connection/connection.php";
 
-while ($field = mysqli_fetch_object($result)) {
-
-
-    echo '
-            <div class = "table">
-           
-                <div class="field">
-                
-                <p>'.$field->computer_id.'</p>
+$result= mysqli_query($connection,"SELECT * FROM computer") or die(mysqli_error());
+while($field = mysqli_fetch_array( $result ))
+{
+    echo '<div class = "registers">
+                <div class="field">       
+                <p>'. $field['id'] .'</p>
                 </div>
                 <div class="field">
-                
-                <p>'.$field->user_id.'</p>
+                <p>'. $field['user_id'] .'</p>
+                 </div>
+                  <div class="field">
+                <p>'. $field['brand'] .'</p>
                  </div>
                  <div class="field">
-                
-                <p>'.$field->brand.'</p>
+                <p>'. $field['model'] .'</p>
                  </div>
                   <div class="field">
-                   
-                <p>'.$field->model.'</p>
-                 </div>
-                  <div class="field">
-                  
-                <p>'.$field->ram.'</p>
-                 </div>
-                  <div class="field">
-                  
-                <p>'.$field->isRepaired.'</p>
+                <p>'. $field['ram'] .'</p>
                  </div>
             </div>';
-
 }
 ?>
 <div class = "cambioListas">
