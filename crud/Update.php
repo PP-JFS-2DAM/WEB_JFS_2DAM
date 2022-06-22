@@ -21,7 +21,7 @@ if ($error != '') {
 }
 ?>
 <div id="content">
-    <h1 class="update">Update a client</h1>
+    <h1 class="update">UPDATE A CLIENT</h1>
 
 <form class ="updateUser" action="" method="post">
     <input type="hidden" name="id" value="<?php echo $id; ?>"/>
