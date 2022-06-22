@@ -52,7 +52,8 @@ while($field = mysqli_fetch_array( $result ))
 }
 ?>
 <div class = "cambioListas">
-    <button class="btn"><a href="ComputerList.php">Lista de ordenadores</a></button>
+    <button class="btn"><a href="ComputerList.php">Computer list</a></button>
+    <button class="btn"><a href="crud/Read.php">Client list</a></button>
 </div>
 
 

@@ -69,5 +69,9 @@ while($field = mysqli_fetch_array( $result )) {
             </div>';
 }
 ?>
+<div class = "cambioListas">
+    <button class="btn"><a href="../ComputerList.php">Computer list</a></button>
+    <button class="btn"><a href="../OrderList.php">Order list</a></button>
+</div>
 </body>
 </html>
