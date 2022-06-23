@@ -62,8 +62,7 @@ if (isset($_POST['submit'])) {
     $vip = htmlspecialchars($_POST['vip']);
 
 
-    if(isset($_POST['vip']) &&
-        $_POST['vip'] == 'value')
+    if($_POST['vip'] == 'value')
     {
         echo $name . " is VIP";
     }
@@ -81,8 +80,10 @@ if (isset($_POST['submit'])) {
         or die(mysqli_error());
         mysqli_query($connection, $query);
 
-        header("Location: Read.php");
+
     }
+
+    header("Location: Read.php");
     } else {
         renderForm('', '', '', '',"");
     }

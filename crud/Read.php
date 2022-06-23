@@ -42,12 +42,15 @@ or die(mysqli_error());
 while($field = mysqli_fetch_array( $result )) {
 
     if($field['vip'] == 1){
+        $field['vip'] = $isVIP;
         $isVIP = $field['name']." is VIP";
 
 
     } else{
+        $field['vip'] = $isVIP;
         $isVIP = $field['name']." is not VIP";
-        $vip = mysqli_fetch_row($result);
+
+
 
     }
 
