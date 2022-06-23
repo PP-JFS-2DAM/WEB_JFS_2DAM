@@ -17,10 +17,10 @@
         <h4>Technical_id</h4>
     </div>
     <div class="field">
-        <h4>Date</h4>
+        <h4>Component</h4>
     </div>
     <div class="field">
-        <h4>Description</h4>
+        <h4>Repair Date</h4>
     </div>
 </div>
 

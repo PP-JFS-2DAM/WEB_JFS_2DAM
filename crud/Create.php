@@ -2,7 +2,7 @@
 $connection = "";
 include "../connection/connection.php";
 
-function renderForm($name, $surname, $dni, $vip_user, $error)
+function renderForm($name, $surname, $dni, $vip, $error)
 {
     ?>
 <!DOCTYPE html>
@@ -21,20 +21,20 @@ function renderForm($name, $surname, $dni, $vip_user, $error)
         <!--<input type="hidden" name="id" value="<?php //echo $id; ?>"/>-->
         <div class="field">
             <label class="label" >*Name</label>
-            <input class="inp" type="text" name="name" value="<?php echo $name; ?>"
+            <input class="inp" type="text" name="name" value="">
         </div>
         <div class="field">
             <label class="label" >*Surname</label>
-            <input class="inp" type="text" name="surname" value="<?php echo $surname; ?>"
+            <input class="inp" type="text" name="surname" value="">
         </div>
         <div class="field">
             <label class="label" >*DNI</label>
-            <input class="inp" type="text" name="dni" value="<?php echo $dni; ?>"
+            <input class="inp" type="text" name="dni" value=""
         </div>
 
         <div class="check">
             <label class="label" >Is this user VIP?:</label>
-            <input class="inp" type="checkbox" name="vip_user" value="<?php echo $vip_user; ?>">
+            <input class="inp" type="checkbox" name="vip" value="1">
 
         </div>
 
@@ -59,27 +59,25 @@ if (isset($_POST['submit'])) {
     $surname = htmlspecialchars($_POST['surname']);
     $dni = htmlspecialchars($_POST['dni']);
 
+    $vip = htmlspecialchars($_POST['vip']);
 
-    $vip_user = htmlspecialchars($_POST['vip_user']);
 
-    if(isset($_POST['vip_user']) &&
-        $_POST['vip_user'] == '1')
+    if(isset($_POST['vip']) &&
+        $_POST['vip'] == 'value')
     {
         echo $name . " is VIP";
-        $vip_user = (string)$vip_user;
-        $vip_user = "VIP";
     }
     else
     {
         echo $name . " is not VIP";
-        $vip_user = 0;
+
     }
 
     if ($name == '' || $surname == '' || $dni == '') {
         $error = 'ERROR: Please, Introduce the required field!';
-        renderForm($name, $surname,$dni,$vip_user, $error);
+        renderForm($name, $surname,$dni,$vip, $error);
     } else {
-        $query = "INSERT user SET name='$name', surname = '$surname', dni = '$dni', vip_user = '$vip_user'"
+        $query = "INSERT user SET name='$name', surname = '$surname', dni = '$dni', vip= '$vip'"
         or die(mysqli_error());
         mysqli_query($connection, $query);
 
