@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/css.css">
+    <link rel="stylesheet" href="../style/css.css">
     <title>Clients List</title>
 </head>
 <body>
@@ -68,20 +68,20 @@ while($field = mysqli_fetch_array( $result )) {
                 <p>'. $field['dni'] .'</p>
                  </div>
                   <div class="field">
-                <p>'.$isVIP.'</p>
+                <p>'.$isVIP. '</p>
                  </div>
                   <div class="crud">
-                <a href="Create.php"><img class="icon" src="../icons/add.png" alt="Register"></a>
-                <a href="Update.php?id=' . $field['id'] .'"><img class="icon" src="../icons/edit.png" alt="Edit"></a>
-                <a href="Delete.php?id=' . $field['id'] . '"><img class="icon" src="../icons/delete.png" alt="Delete"></a>
+                <a href="Create.php"><img class="icon" src="../media/icons/add.png" alt="Register"></a>
+                <a href="Update.php?id=' . $field['id'] . '"><img class="icon" src="../media/icons/edit.png" alt="Edit"></a>
+                <a href="Delete.php?id=' . $field['id'] . '"><img class="icon" src="../media/icons/delete.png" alt="Delete"></a>
                  </div>
             </div>';
 }
 
 ?>
 <div class = "cambioListas">
-    <button class="btn"><a href="../ComputerList.php">Computer list</a></button>
-    <button class="btn"><a href="../WorkOrderList.php">Order list</a></button>
+    <button class="btn"><a href="../lists/ComputerList.php">Computer list</a></button>
+    <button class="btn"><a href="../lists/WorkOrderList.php">Order list</a></button>
 </div>
 </body>
 </html>
