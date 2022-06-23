@@ -30,14 +30,15 @@ $connection = "";
 include "connection/connection.php";
 
 $result= mysqli_query($connection,"SELECT * FROM computer") or die(mysqli_error());
-while($field = mysqli_fetch_array( $result ))
-{
+
+while($field = mysqli_fetch_array( $result )){
+
     echo '<div class = "registers">
                 <div class="field">       
                 <p>'. $field['id'] .'</p>
                 </div>
                 <div class="field">
-                <p>'. $field['user_id'] .'</p>
+                <p>'. $field['user_id'].'</p>
                  </div>
                   <div class="field">
                 <p>'. $field['brand'] .'</p>

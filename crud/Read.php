@@ -19,7 +19,7 @@
         <h4>Surname</h4>
     </div>
     <div class="field">
-        <h4>DNI</h4>
+        <h4>Personal ID</h4>
     </div>
     <div class="field">
         <h4>VIP</h4>
@@ -33,16 +33,25 @@ $connection = "";
 include "../connection/connection.php";
 
 $isVIP="";
+
 $result = mysqli_query($connection,"SELECT * FROM user")
 or die(mysqli_error());
 
+
+
 while($field = mysqli_fetch_array( $result )) {
 
-    if($field['vip_user'] == 0){
-        $isVIP = $field['name']." is not VIP";
-    } else{
+    if($field['vip'] == 1){
         $isVIP = $field['name']." is VIP";
+
+
+    } else{
+        $isVIP = $field['name']." is not VIP";
+        $vip = mysqli_fetch_row($result);
+
     }
+
+
 
 
     echo '<div class = "registers">
@@ -68,6 +77,7 @@ while($field = mysqli_fetch_array( $result )) {
                  </div>
             </div>';
 }
+
 ?>
 <div class = "cambioListas">
     <button class="btn"><a href="../ComputerList.php">Computer list</a></button>
