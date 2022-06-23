@@ -11,7 +11,7 @@ function renderForm($id, $name, $surname, $dni, $vip, $error)
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/css_form.css">
+    <link rel="stylesheet" href="../style/css_form.css">
     <title>Update Client</title>
 </head>
 <body>
