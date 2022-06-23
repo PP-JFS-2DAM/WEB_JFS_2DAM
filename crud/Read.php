@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../style/css.css">
+    <link rel="stylesheet" href="../style/list.css">
     <title>Clients List</title>
 </head>
 <body>

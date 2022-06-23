@@ -9,7 +9,7 @@ function renderForm($name, $surname, $dni, $vip, $error)
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../style/css_form.css">
+    <link rel="stylesheet" href="../style/form.css">
     <title>Create User</title>
 </head>
 <body>
@@ -28,7 +28,7 @@ function renderForm($name, $surname, $dni, $vip, $error)
             <input class="inp" type="text" name="surname" value="">
         </div>
         <div class="field">
-            <label class="label" >*DNI</label>
+            <label class="label" >*Personal ID</label>
             <input class="inp" type="text" name="dni" value=""
         </div>
 

@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../style/css.css">
+    <link rel="stylesheet" href="../style/list.css">
 </head>
 <body>
 
@@ -26,7 +26,7 @@
 
 <?php
 $connection = "";
-include "connection/connection.php";
+include "../connection/connection.php";
 
 $result= mysqli_query($connection,"SELECT * FROM work_order") or die(mysqli_error());
 
