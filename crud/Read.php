@@ -7,7 +7,17 @@
 </head>
 <body>
 
+<header>
 <div class = "title">CLIENT LIST</div>
+    <div class = "cambioListas">
+        <div class="boton">
+                <a href="../lists/ComputerList.php"><img src="/media/images/computer.png" alt="computer" class="btn"></a>
+        </div>
+        <div class="boton">
+                <a href="../lists/WorkOrderList.php"><img src="/media/images/workorder.png" alt="order" class="btn"></a>
+        </div>
+</header>
+
 <div class = "column_name">
     <div class="field">
         <h4>User_id</h4>
@@ -24,7 +34,7 @@
     <div class="field">
         <h4>VIP</h4>
     </div>
-    <div class="field" style="background-color:#ccc";>
+    <div class="field" style="background-color:darkblue; color: bisque";>
         <h4>Functions</h4>
     </div>
 </div>
@@ -78,13 +88,12 @@ while($field = mysqli_fetch_array( $result )) {
                 <a href="Update.php?id=' . $field['id'] . '"><img class="icon" src="../media/icons/edit.png" alt="Edit"></a>
                 <a href="Delete.php?id=' . $field['id'] . '"><img class="icon" src="../media/icons/delete.png" alt="Delete"></a>
                  </div>
-            </div>';
+            </div>
+          ';
+
+
 }
 
 ?>
-<div class = "cambioListas">
-    <button class="btn"><a href="../lists/ComputerList.php">Computer list</a></button>
-    <button class="btn"><a href="../lists/WorkOrderList.php">Order list</a></button>
-</div>
 </body>
 </html>

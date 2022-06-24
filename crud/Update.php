@@ -50,7 +50,7 @@ if ($error != '') {
             echo '<input class="inp" type="checkbox" name="vip" value='.$vip.'>'?>
 
     </div>
-        <input class = "btn-log-reg" type="submit" name="submit" value="Update">
+        <input class = "btn" type="submit" name="submit" value="Update">
     </div>
 </form>
 </div>

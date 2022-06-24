@@ -39,7 +39,7 @@ function renderForm($name, $surname, $dni, $vip, $error)
         </div>
 
 
-        <input class = "btn-log-reg" type="submit" name="submit" value="Register">
+        <input class = "btn" type="submit" name="submit" value="Register">
 
         <?php
         if ($error != '') {
