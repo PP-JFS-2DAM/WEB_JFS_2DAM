@@ -14,11 +14,11 @@ INSERT INTO `technical` (`id`, `dni`, `is_available`, `name`, `surname`) VALUES 
 INSERT INTO `technical` (`id`, `dni`, `is_available`, `name`, `surname`) VALUES (NULL, '85435609R', b'0', 'Raúl', 'Martín');
 INSERT INTO `technical` (`id`, `dni`, `is_available`, `name`, `surname`) VALUES (NULL, '09561452Z', b'1', 'Sandra', 'Victoria');
 
-INSERT INTO `work_order` (`id`, `description`, `order_date`, `computer_id`, `technical_id`) VALUES (NULL, 'Placa base', '2022-06-21', '1', '1');
-INSERT INTO `work_order` (`id`, `description`, `order_date`, `computer_id`, `technical_id`) VALUES (NULL, 'Batería', '2022-06-22', '2', '3');
+INSERT INTO `work_order` (`id`, `description`, `order_date`, `computer_id`, `technical_id`) VALUES (NULL, 'Motherboard', '2022-06-21', '1', '1');
+INSERT INTO `work_order` (`id`, `description`, `order_date`, `computer_id`, `technical_id`) VALUES (NULL, 'Battery', '2022-06-22', '2', '3');
 INSERT INTO `work_order` (`id`, `description`, `order_date`, `computer_id`, `technical_id`) VALUES (NULL, 'USB-A Port', '2022-06-19', '3', '1');
-INSERT INTO `work_order` (`id`, `description`, `order_date`, `computer_id`, `technical_id`) VALUES (NULL, 'Tarjeta gráfica', '2022-06-30', '4', '2');
-INSERT INTO `work_order` (`id`, `description`, `order_date`, `computer_id`, `technical_id`) VALUES (NULL, 'Recuperar HDD', '2022-07-02', '5', '2');
+INSERT INTO `work_order` (`id`, `description`, `order_date`, `computer_id`, `technical_id`) VALUES (NULL, 'Graphic Card', '2022-06-30', '4', '2');
+INSERT INTO `work_order` (`id`, `description`, `order_date`, `computer_id`, `technical_id`) VALUES (NULL, 'Restore HDD', '2022-07-02', '5', '2');
 
 INSERT INTO `receipt` (`id`, `date`, `discount`, `price`, `order_id`) VALUES (NULL, '2022-06-21', '0', '59.99', '1');
 INSERT INTO `receipt` (`id`, `date`, `discount`, `price`, `order_id`) VALUES (NULL, '2022-06-22', '0', '34.99', '2');
