@@ -11,7 +11,7 @@ function renderForm($id, $name, $surname, $dni, $vip, $error)
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../style/css_form.css">
+    <link rel="stylesheet" href="../style/form.css">
     <title>Update Client</title>
 </head>
 <body>
@@ -50,7 +50,7 @@ if ($error != '') {
             echo '<input class="inp" type="checkbox" name="vip" value='.$vip.'>'?>
 
     </div>
-        <input class = "btn-log-reg" type="submit" name="submit" value="Update">
+        <input class = "btn" type="submit" name="submit" value="Update">
     </div>
 </form>
 </div>

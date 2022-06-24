@@ -9,7 +9,7 @@ function renderForm($name, $surname, $dni, $vip, $error)
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../style/css_form.css">
+    <link rel="stylesheet" href="../style/form.css">
     <title>Create User</title>
 </head>
 <body>
@@ -28,7 +28,7 @@ function renderForm($name, $surname, $dni, $vip, $error)
             <input class="inp" type="text" name="surname" value="">
         </div>
         <div class="field">
-            <label class="label" >*DNI</label>
+            <label class="label" >*Personal ID</label>
             <input class="inp" type="text" name="dni" value=""
         </div>
 
@@ -39,7 +39,7 @@ function renderForm($name, $surname, $dni, $vip, $error)
         </div>
 
 
-        <input class = "btn-log-reg" type="submit" name="submit" value="Register">
+        <input class = "btn" type="submit" name="submit" value="Register">
 
         <?php
         if ($error != '') {
@@ -62,8 +62,7 @@ if (isset($_POST['submit'])) {
     $vip = htmlspecialchars($_POST['vip']);
 
 
-    if(isset($_POST['vip']) &&
-        $_POST['vip'] == 'value')
+    if($_POST['vip'] == 'value')
     {
         echo $name . " is VIP";
     }
@@ -81,8 +80,10 @@ if (isset($_POST['submit'])) {
         or die(mysqli_error());
         mysqli_query($connection, $query);
 
-        header("Location: Read.php");
+
     }
+
+    header("Location: Read.php");
     } else {
         renderForm('', '', '', '',"");
     }

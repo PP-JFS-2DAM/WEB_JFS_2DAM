@@ -1,12 +1,23 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../style/css.css">
+    <link rel="stylesheet" href="../style/list.css">
     <title>Computer List</title>
 </head>
 <body>
 
+<header>
 <div class = "title">COMPUTER LIST</div>
+    <div class = "cambioListas">
+        <div class="boton">
+            <a href="../crud/Read.php"><img src="/media/images/user.png" alt="user" class="btn"></a>
+        </div>
+        <div class="boton">
+        <a href="../lists/WorkOrderList.php"><img src="/media/images/workorder.png" alt="order" class="btn"></a>
+        </div>
+    </div>
+</header>
+
 <div class = "column_name">
     <div class="field">
         <h4>Computer_id</h4>
@@ -27,7 +38,7 @@
 
 <?php
 $connection = "";
-include "connection/connection.php";
+include "../connection/connection.php";
 
 $result= mysqli_query($connection,"SELECT * FROM computer") or die(mysqli_error());
 
@@ -52,10 +63,7 @@ while($field = mysqli_fetch_array( $result )){
             </div>';
 }
 ?>
-<div class = "cambioListas">
-    <button class="btn"><a href="WorkOrderList.php">Order list</a></button>
-    <button class="btn"><a href="../crud/Read.php">Client list</a></button>
-</div>
+
 
 
 

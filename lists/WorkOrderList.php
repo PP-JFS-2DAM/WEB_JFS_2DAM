@@ -1,11 +1,20 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../style/css.css">
+    <link rel="stylesheet" href="../style/list.css">
 </head>
 <body>
-
-<div class = "title">ORDER LIST</div>
+<header>
+    <div class = "title">ORDER LIST</div>
+    <div class = "cambioListas">
+        <div class="boton">
+            <a href="../crud/Read.php"><img src="/media/images/user.png" alt="user" class="btn"></a>
+        </div>
+        <div class="boton">
+            <a href="../lists/ComputerList.php"><img src="/media/images/computer.png" alt="computer" class="btn"></a>
+        </div>
+    </div>
+</header>
 <div class = "column_name">
     <div class="field">
         <h4>Order_id</h4>
@@ -26,7 +35,7 @@
 
 <?php
 $connection = "";
-include "connection/connection.php";
+include "../connection/connection.php";
 
 $result= mysqli_query($connection,"SELECT * FROM work_order") or die(mysqli_error());
 
@@ -51,10 +60,6 @@ while($field = mysqli_fetch_array( $result ))
             </div>';
 }
 ?>
-<div class = "cambioListas">
-    <button class="btn"><a href="ComputerList.php">Computer list</a></button>
-    <button class="btn"><a href="../crud/Read.php">Client list</a></button>
-</div>
 
 
 
